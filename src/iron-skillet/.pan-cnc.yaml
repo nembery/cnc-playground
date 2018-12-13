@@ -1,0 +1,30 @@
+name: iron-skillet
+
+views:
+  - name: ''
+    class: CNCView
+    menu: Iron-Skillet
+    menu_option: Welcome
+    attributes:
+      template_name: pan_cnc/welcome.html
+    context:
+      title: Iron-Skillet
+      description: Some nice long descrition here!
+      documentation_link: http://iron-skillet.readthedocs.io
+
+  - name: 'configure'
+    class: ChooseSnippetView
+    menu: Iron-Skillet
+    menu_option: GPCS - GO
+    attributes:
+      snippet: cnc-conf-gpcs
+      header: Step 1
+      title: Choose GPCS Snippet
+
+  - name: 'provision'
+    class: ProvisionSnippetView
+
+  - name: 'docker'
+    class: DockerTestView
+    menu: Iron-Skillet
+    menu_option: Docker Test

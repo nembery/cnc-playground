@@ -1,0 +1,22 @@
+name: docker_test
+label: Docker Test
+description: Blah
+type: docker
+extends:
+
+labels:
+  service_type: docker
+
+variables:
+- name: image
+  description: Image
+  default: Alpine
+  type_hint: text
+- name: cmd
+  description: Command
+  default: ls /tmp
+  type_hint: text
+
+snippets:
+
+
