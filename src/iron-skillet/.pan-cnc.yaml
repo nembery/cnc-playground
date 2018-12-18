@@ -13,16 +13,35 @@ views:
       documentation_link: http://iron-skillet.readthedocs.io
 
   - name: 'configure'
-    class: ChooseSnippetView
+    class: ChooseSnippetByLabelView
     menu: Iron-Skillet
-    menu_option: GPCS - GO
+    menu_option: Workflow-test
     attributes:
-      snippet: cnc-conf-gpcs
+      label_name: service_type
+      label_value: iron_skillet
       header: Step 1
       title: Choose GPCS Snippet
+      next_url: workflow01
 
   - name: 'provision'
     class: ProvisionSnippetView
+
+  - name: workflow01
+    class: IronSkilletWorkflow01
+
+  - name: workflow02
+    class: IronSkilletWorkflow02
+
+  - name: workflow03
+    class: CNCBaseFormView
+    attributes:
+      fields_to_filter:
+        - MGMT_TYPE
+        - MGMT_IP
+        - MGMT_MASK
+        - PANORAMA_TYPE
+        - PANORAMA_IP
+        - PANORAMA_MASK
 
   - name: 'docker'
     class: DockerTestView
